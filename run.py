@@ -96,7 +96,7 @@ visuals.getGameTitle()
 visuals.getGameWord()
 
 while fails < 7 and hits < word_length:
-    user_input = input("Please enter a letter: ")
+    user_input = input("Please enter a letter:\n ")
     visuals.clearConsole()
     letter_found_count = visuals.compareWordLetter(user_input)
     if letter_found_count == 0:
