@@ -48,7 +48,8 @@ WIREFRAMES
 
 Wireframe 1 Wireframe 2
 
-
+![wireframe](./media/wireframe1.png)
+![wireframe2](./media/wireframe2.png)
 
 IMAGES
 
