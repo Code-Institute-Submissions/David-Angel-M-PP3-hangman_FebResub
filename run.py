@@ -14,7 +14,7 @@ class GameVisuals:
         print("+++++++++++You are ready to play+++++++++++")
         print("You have 7 attemps to guess the hidden word")
         print("Numbers and symbols would be consider as\nfailed attemp")
-        
+
     def getGameWord(self):
         for x in range(len(self.word)):
             if self.word[x] == self.guessed_letters[x]:
