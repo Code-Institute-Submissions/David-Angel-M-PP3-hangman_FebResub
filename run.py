@@ -9,13 +9,13 @@ class GameVisuals:
         self.guessed_letters = [None] * len(word)
         self.played_letters = []
 
-    def getGameTitle(self):
+    def get_game_title(self):
         print("++++++++++++Welcome to hangman+++++++++++++")
         print("+++++++++++You are ready to play+++++++++++")
         print("You have 7 attemps to guess the hidden word")
         print("Numbers and symbols would be consider as\nfailed attemp")
 
-    def getGameWord(self):
+    def get_game_word(self):
         for x in range(len(self.word)):
             if self.word[x] == self.guessed_letters[x]:
                 print(self.word[x], end=" ")
@@ -24,7 +24,7 @@ class GameVisuals:
         print("")
         print("")
 
-    def compareWordLetter(self, user_input):
+    def compare_word_letter(self, user_input):
         index = 0
         letter_found_count = 0
         user_input_lenght = len(user_input)
@@ -46,11 +46,11 @@ class GameVisuals:
 
         return letter_found_count
 
-    def getPlayedLetters(self):
+    def get_played_letters(self):
         for letter in self.played_letters:
             print(letter, end=" ")
 
-    def clearConsole(self):
+    def clear_console(self):
         os.system("clear")
 
 
@@ -62,23 +62,23 @@ class Words:
     def __init__(self):
         self.words = []
 
-    def getWordList(self):
+    def get_word_list(self):
         word_site = "https://www.mit.edu/~ecprice/wordlist.10000"
         response = requests.get(word_site, timeout=10)
-        wordsInBytes = response.content.splitlines()
-        self.convertBytesIntoString(wordsInBytes)
-        self.filterWordList()
+        words_in_bytes = response.content.splitlines()
+        self.convert_bytes_into_string(words_in_bytes)
+        self.filter_word_list()
 
-    def convertBytesIntoString(self, wordsInBytes):
-        for word in wordsInBytes:
+    def convert_bytes_into_string(self, words_in_bytes):
+        for word in words_in_bytes:
             self.words.append(word.decode("utf-8"))
 
-    def filterWordList(self):
+    def filter_word_list(self):
         for word in self.words:
             if len(word) < 4:
                 self.words.remove(word)
 
-    def getRandomWord(self):
+    def get_random_word(self):
         index = random.randint(0, len(self.words) - 1)
         return self.words[index]
 
@@ -89,26 +89,26 @@ if __name__ == "__main__":
     fails = 0
     hits = 0
 
-    w1.getWordList()
-    gameWord = w1.getRandomWord()
-    word_length = len(gameWord)
-    visuals = GameVisuals(gameWord)
+    w1.get_word_list()
+    game_word = w1.get_random_word()
+    word_length = len(game_word)
+    visuals = GameVisuals(game_word)
 
-    visuals.getGameTitle()
-    visuals.getGameWord()
+    visuals.get_game_title()
+    visuals.get_game_word()
 
     while fails < 7 and hits < word_length:
         user_input = input("Please enter a letter:\n ")
-        visuals.clearConsole()
-        letter_found_count = visuals.compareWordLetter(user_input)
+        visuals.clear_console()
+        letter_found_count = visuals.compare_word_letter(user_input)
         if letter_found_count == 0:
             fails = fails + 1
         elif letter_found_count > 0:
             hits = hits + letter_found_count
-        visuals.getGameTitle()
-        visuals.getGameWord()
+        visuals.get_game_title()
+        visuals.get_game_word()
         print("Letters played...")
-        visuals.getPlayedLetters()
+        visuals.get_played_letters()
         print("")
         print(f"Fails: {fails}")
 
@@ -116,4 +116,4 @@ if __name__ == "__main__":
         print("!!!!!CONGRATULATIONS YOU WON!!!!!!")
     else:
         print("SORRY YOU LOSE")
-        print("The word was: " + gameWord)
+        print("The word was: " + game_word)

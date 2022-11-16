@@ -85,7 +85,7 @@ Python.
 
 PROGRAMS USED
 
-GIT For version control, commiting and pushing to github. GITHUB Used to store repositories, files and images pushed from gitpod. Heroku for deployment.
+GIT For version control, commiting and pushing to github. GITHUB Used to store repositories, files and images pushed from gitpod. HEROKU for deployment.
 
 CREDITS
 
