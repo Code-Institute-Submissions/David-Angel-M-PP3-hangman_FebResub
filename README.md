@@ -69,9 +69,9 @@ Mainly space and indentation errors
 
 UNSOLVED BUGS AND ERRORS
 
-I encounter 3 warning errors in gitpod.yml.
-I encounter 3 warning errors in run.py.
-I encounter 31 blue (i) in run.py.
+I encounter 3 warning errors in gitpod.yml
+I encounter 2 warning errors in run.py
+I encounter 18 blue (i) in run.py
 
 
 
