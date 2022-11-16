@@ -115,5 +115,3 @@ if hits == word_length:
 else:
     print("SORRY YOU LOSE")
     print("The word was: " + gameWord)
-
-
