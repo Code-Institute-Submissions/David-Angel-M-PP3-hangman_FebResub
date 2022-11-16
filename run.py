@@ -13,6 +13,8 @@ class GameVisuals:
         print("++++++++++++Welcome to hangman+++++++++++++")
         print("+++++++++++You are ready to play+++++++++++")
         print("You have 7 attemps to guess the hidden word")
+        print("Numbers and symbols would be consider as\nfailed attemp")
+        
 
     def getGameWord(self):
         for x in range(len(self.word)):
@@ -50,7 +52,7 @@ class GameVisuals:
             print(letter, end=" ")
 
     def clearConsole(self):
-        os.system('clear')
+        os.system("clear")
 
 
 class Words:
@@ -82,36 +84,37 @@ class Words:
         return self.words[index]
 
 
-# Init
-w1 = Words()
-fails = 0
-hits = 0
+if __name__ == "__main__":
+    # Init
+    w1 = Words()
+    fails = 0
+    hits = 0
 
-w1.getWordList()
-gameWord = w1.getRandomWord()
-word_length = len(gameWord)
-visuals = GameVisuals(gameWord)
+    w1.getWordList()
+    gameWord = w1.getRandomWord()
+    word_length = len(gameWord)
+    visuals = GameVisuals(gameWord)
 
-visuals.getGameTitle()
-visuals.getGameWord()
-
-while fails < 7 and hits < word_length:
-    user_input = input("Please enter a letter:\n ")
-    visuals.clearConsole()
-    letter_found_count = visuals.compareWordLetter(user_input)
-    if letter_found_count == 0:
-        fails = fails + 1
-    elif letter_found_count > 0:
-        hits = hits + letter_found_count
     visuals.getGameTitle()
     visuals.getGameWord()
-    print("Letters played...")
-    visuals.getPlayedLetters()
-    print("")
-    print(f"Fails: {fails}")
 
-if hits == word_length:
-    print("!!!!!CONGRATULATIONS YOU WON!!!!!!")
-else:
-    print("SORRY YOU LOSE")
-    print("The word was: " + gameWord)
+    while fails < 7 and hits < word_length:
+        user_input = input("Please enter a letter:\n ")
+        visuals.clearConsole()
+        letter_found_count = visuals.compareWordLetter(user_input)
+        if letter_found_count == 0:
+            fails = fails + 1
+        elif letter_found_count > 0:
+            hits = hits + letter_found_count
+        visuals.getGameTitle()
+        visuals.getGameWord()
+        print("Letters played...")
+        visuals.getPlayedLetters()
+        print("")
+        print(f"Fails: {fails}")
+
+    if hits == word_length:
+        print("!!!!!CONGRATULATIONS YOU WON!!!!!!")
+    else:
+        print("SORRY YOU LOSE")
+        print("The word was: " + gameWord)
