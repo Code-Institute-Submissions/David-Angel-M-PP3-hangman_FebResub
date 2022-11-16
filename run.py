@@ -1,5 +1,57 @@
 import random
 import requests
+import os
+
+
+class GameVisuals:
+    def __init__(self, word):
+        self.word = word
+        self.guessed_letters = [None] * len(word)
+        self.played_letters = []
+
+    def getGameTitle(self):
+        print("++++++++++++Welcome to hangman+++++++++++++")
+        print("+++++++++++You are ready to play+++++++++++")
+        print("You have 7 attemps to guess the hidden word")
+
+    def getGameWord(self):
+        for x in range(len(self.word)):
+            if self.word[x] == self.guessed_letters[x]:
+                print(self.word[x], end=" ")
+            else:
+                print("_", end=" ")
+        print("")
+        print("")
+
+    def compareWordLetter(self, user_input):
+        index = 0
+        letter_found_count = 0
+        user_input_lenght = len(user_input)
+
+        for guess_letter in self.played_letters:
+            if guess_letter == user_input:
+                letter_found_count = -1
+
+        if user_input_lenght != 1:
+            letter_found_count = -1
+
+        if letter_found_count != -1:
+            for letter in self.word:
+                if letter == user_input:
+                    self.guessed_letters[index] = user_input
+                    letter_found_count = letter_found_count + 1
+                index = index + 1
+            self.played_letters.append(user_input)
+
+        return letter_found_count
+
+    def getPlayedLetters(self):
+        for letter in self.played_letters:
+            print(letter, end=" ")
+
+    def clearConsole(self):
+        os.system('clear')
+
 
 class Words:
     """
