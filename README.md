@@ -4,7 +4,7 @@ HANGMAN
 
 PURPOSE
 
-Hangman game was created to entertain the users with a classical, retro game that has been around for way too long in a very simple way.
+Hangman game was created to entertain the users with a classic, retro game that has been around for way too long in a very simple way.
 
 FINAL RESULT
 
@@ -58,11 +58,14 @@ The game has been tested in the terminal with the "pip install black" command.
 
 VALIDATORS
 
-The game has been validated in the terminal with the "pip install black" command.
+The game has been validated in the CI Python Linter.
+![CI Python Linter](./media/cipythonlinter.png)
+
 
 
 SOLVED BUGS AND ERRORS
 
+Corrected variables from camelCase to lowercase with low_dash
 Mainly space and indentation errors
 
 
@@ -89,4 +92,4 @@ GIT For version control, commiting and pushing to github. GITHUB Used to store r
 
 CREDITS
 
-Mike Dane Youtuber Software Developer. Kevin Powell Youtuber Software Developer (The king of CSS). Antonio Rodriguez my mentor. W3Schools. YouTube. Stackoverflow. Student care. Tutors and the Slack community.
+Mike Dane Youtuber Software Developer. Antonio Rodriguez my mentor. W3Schools. YouTube. Stackoverflow. Student care. Tutors and the Slack community.

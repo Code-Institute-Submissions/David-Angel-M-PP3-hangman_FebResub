@@ -4,6 +4,11 @@ import requests
 
 
 class GameVisuals:
+    """
+    Class cointains all methods required
+    in the game logic after a word is given
+    """
+
     def __init__(self, word):
         self.word = word
         self.guessed_letters = [None] * len(word)
@@ -15,7 +20,11 @@ class GameVisuals:
         print("You have 7 attemps to guess the hidden word")
         print("Numbers and symbols would be consider as\nfailed attemp")
 
-    def get_game_word(self):
+    def get_game_hidden_word(self):
+        """
+        Method shows dashes in the place where letter should be,
+        if user gets a letter the letter shows
+        """
         for x in range(len(self.word)):
             if self.word[x] == self.guessed_letters[x]:
                 print(self.word[x], end=" ")
@@ -25,6 +34,9 @@ class GameVisuals:
         print("")
 
     def compare_word_letter(self, user_input):
+        """
+        Verifies if the user input is a letter of the hidden word
+        """
         index = 0
         letter_found_count = 0
         user_input_lenght = len(user_input)
@@ -47,6 +59,9 @@ class GameVisuals:
         return letter_found_count
 
     def get_played_letters(self):
+        """
+        Shows all the letters that the player has typed
+        """
         for letter in self.played_letters:
             print(letter, end=" ")
 
@@ -56,13 +71,16 @@ class GameVisuals:
 
 class Words:
     """
-    Words manager
+    Class used to get a list of words and return a random word
     """
 
     def __init__(self):
         self.words = []
 
     def get_word_list(self):
+        """
+        Get a list of words from an online resource
+        """
         word_site = "https://www.mit.edu/~ecprice/wordlist.10000"
         response = requests.get(word_site, timeout=10)
         words_in_bytes = response.content.splitlines()
@@ -84,7 +102,6 @@ class Words:
 
 
 if __name__ == "__main__":
-    # Init
     w1 = Words()
     fails = 0
     hits = 0
@@ -95,7 +112,7 @@ if __name__ == "__main__":
     visuals = GameVisuals(game_word)
 
     visuals.get_game_title()
-    visuals.get_game_word()
+    visuals.get_game_hidden_word()
 
     while fails < 7 and hits < word_length:
         user_input = input("Please enter a letter:\n ")
@@ -106,7 +123,7 @@ if __name__ == "__main__":
         elif letter_found_count > 0:
             hits = hits + letter_found_count
         visuals.get_game_title()
-        visuals.get_game_word()
+        visuals.get_game_hidden_word()
         print("Letters played...")
         visuals.get_played_letters()
         print("")
