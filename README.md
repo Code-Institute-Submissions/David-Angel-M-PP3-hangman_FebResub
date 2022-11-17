@@ -23,7 +23,7 @@ AS A USER
 
 I want the game to have higher difficulty.
 I want to easily understand the main purpose of the game.
-I want ramdon choices of words (10000).
+I want random choices of words (10000).
 I want to be able to see how many attemps I have left.
 I want the option to play again.
 
@@ -74,7 +74,7 @@ UNSOLVED BUGS AND ERRORS
 
 I encounter 3 warning errors in gitpod.yml
 I encounter 2 warning errors in run.py
-I encounter 18 blue (i) in run.py
+I encounter 13 blue (i) in run.py
 
 
 
