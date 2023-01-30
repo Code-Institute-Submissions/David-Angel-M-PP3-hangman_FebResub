@@ -58,13 +58,6 @@ To put in practise that I understand the basic skills to used Python. To give us
 
 
 
-## WIREFRAMES
-
-![wireframe](./media/wireframe1.png)
-![wireframe2](./media/wireframe2.png)
-
-
-
 ## TESTING
 
 The game has been tested in the terminal with the "pip install black" command.
