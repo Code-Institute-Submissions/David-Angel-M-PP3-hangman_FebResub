@@ -60,7 +60,7 @@ To put in practise that I understand the basic skills to used Python. To give us
 
 ## TESTING
 
-The game has been tested in the terminal with the "pip install black" command.
+The game has been tested in the terminal with the "pip install black" command. Write different input manually to see if the program responeded well, passed when put different characters in the termial including comas, numbers, blank spaces, etc.
 
 
 
@@ -124,13 +124,20 @@ The game has been tested, played and has responded correctly.
 
 
 
-## CREDITS
+## CREDITS AND CONTENT
 
-* Shaun Halverson, Youtuber https://youtu.be/pFvSb7cb_Us, Software Developer.
+* Shaun Halverson Software Developer & Youtuber. [Shaun in Action](https://youtu.be/pFvSb7cb_Us) - Shaun's youtube channel and some ideas taken from here.
 * Antonio Rodriguez, my mentor.
-* W3Schools. 
-* YouTube. 
+* W3Schools.  
 * Stackoverflow.
 * Student care. 
-* Tutors.
 * Slack community.
+
+
+## ACKNOWLEDGMENTS
+
+* This game was created for my PP3 Project for the Full Stack Software Developer program with Code Institute.
+
+
+
+## David Angel, 2022/2023
