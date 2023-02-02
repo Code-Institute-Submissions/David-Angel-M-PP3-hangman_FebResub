@@ -84,14 +84,14 @@ class GameVisuals:
         """
         while True:
             user_input = input("Please enter a letter: ").strip()
-            if (re.match(r'^\s*$', user_input)):
+            if re.match(r'^\s*$', user_input):
                 print("You have typed only spaces, please try again...")
-            elif (len(user_input) == 0):
+            elif len(user_input) == 0:
                 print("You haven't typed a letter, please try again...")
-            elif (not re.search(r'^[a-zA-Z]+$', user_input)):
+            elif not re.search(r'^[a-zA-Z]+$', user_input):
                 print("The character " + user_input +
                       " in not a letter, please try again...")
-            elif (len(user_input) > 1):
+            elif len(user_input) > 1:
                 print("You typed more than one character, please try again...")
             else:
                 return user_input.lower()
