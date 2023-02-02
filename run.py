@@ -137,8 +137,7 @@ class Words:
         index = random.randint(0, len(self.words) - 1)
         return self.words[index]
 
-
-if __name__ == "__main__":
+def playGame():
     w1 = Words()
     FAILS = 0
     HITS = 0
@@ -165,6 +164,7 @@ if __name__ == "__main__":
         print("Letters played...")
         visuals.get_played_letters()
         print("")
+        print(f"HITS: {HITS}")
         print(f"FAILS: {FAILS}")
 
     if HITS == word_length:
@@ -172,3 +172,15 @@ if __name__ == "__main__":
     else:
         print("SORRY YOU LOSE")
         print("The word was: " + game_word)
+
+
+if __name__ == "__main__":
+    play = True
+    while play:
+        playGame()
+        play_again = input("Play again? Y/N  ")
+        while play_again.upper() not in ["Y", "N"]:
+            print("Wrong input: only 'Y' and 'N' allowed")
+            play_again = input("Play again? Y/N  ")
+        play = play_again.upper() == "Y"
+    print("Thanks for playing")
