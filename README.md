@@ -66,29 +66,32 @@ The game has been tested in the terminal with the "pip install black" command. W
 
 ## THIS IS HOW THE GAME LOOKS LIKE
 
-* The first screen shows a welcoming message and the game is ready to play
-image 1
+1. The first screen shows a welcoming message and the game is ready to play
+* ![Image 1](media/hgm1.png)
 
-* In here you can see when the user typed a wrong letter
-image 2
+2. In here you can see when the user typed a wrong letter
+* ![Image 2](media/hgm2.png)
 
-* In here shows the right letter that the user typed on the hidden word lines
-image 3
+3. In here shows the right letter that the user typed on the hidden word lines
+* ![Image 3](media/hgm3.png)
 
-* In here you see the message the user sees when a character that's not a letter is been typed
-image 4
+4. In here you see the message the user sees when a character that's not a letter is been typed
+* ![Image 14](media/hgm4.png)
 
-* In here the game shows this message when notthing has been typed
-image 5
+5. In here the game shows this message when nothing has been typed
+* ![Image 5](media/hgm5.png)
 
-* In here you see this message when the user runs out of options
-image 6
+6. In here you see this message when the user runs out of options and lose the game
+* ![Image 6](media/hgm6.png)
+
+7. In here you see this message when the user guess the hidden word
+* ![Image 7](media/hgm7.png)
 
 
 
 ## VALIDATORS
 
-The game has been validated in the CI Python Linter.
+The game has been validated in the CI Python Linter. [CI Python Linter](https://pep8ci.herokuapp.com)
 ![CI Python Linter](./media/cipythonlinter.png)
 
 
@@ -102,14 +105,13 @@ The game has been validated in the CI Python Linter.
 
 ## UNSOLVED BUGS AND ERRORS
 
-* I encounter 3 warning errors in run.py
-* I encounter 6 blue (i) in run.py
+* I encounter 8 blue (i) in run.py
 
 
 
 ## FUNCTIONALITY
 
-The game has been tested, played and has responded correctly.
+* The game has been tested, played and has responded correctly.
 
 
 

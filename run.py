@@ -137,10 +137,14 @@ class Words:
         index = random.randint(0, len(self.words) - 1)
         return self.words[index]
 
+
 def playGame():
+    """
+    Plays a game of Hangman
+    """
     w1 = Words()
-    FAILS = 0
-    HITS = 0
+    fails = 0
+    hits = 0
 
     w1.get_word_list()
     game_word = w1.get_random_word()
@@ -151,23 +155,23 @@ def playGame():
     visuals.get_game_title()
     visuals.get_game_hidden_word()
 
-    while FAILS < 7 and HITS < word_length:
+    while fails < 7 and hits < word_length:
         user_input = visuals.user_input_validator()
         visuals.clear_console()
         letter_found_count = visuals.compare_word_letter(user_input)
         if letter_found_count == 0:
-            FAILS = FAILS + 1
+            fails = fails + 1
         elif letter_found_count > 0:
-            HITS = HITS + letter_found_count
+            hits = hits + letter_found_count
         visuals.get_game_title()
         visuals.get_game_hidden_word()
         print("Letters played...")
         visuals.get_played_letters()
         print("")
-        print(f"HITS: {HITS}")
-        print(f"FAILS: {FAILS}")
+        print(f"hits: {hits}")
+        print(f"fails: {fails}")
 
-    if HITS == word_length:
+    if hits == word_length:
         print("!!!!!CONGRATULATIONS YOU WON!!!!!!")
     else:
         print("SORRY YOU LOSE")
