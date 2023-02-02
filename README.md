@@ -64,6 +64,28 @@ The game has been tested in the terminal with the "pip install black" command. W
 
 
 
+## THIS IS HOW THE GAME LOOKS LIKE
+
+* The first screen shows a welcoming message and the game is ready to play
+image 1
+
+* In here you can see when the user typed a wrong letter
+image 2
+
+* In here shows the right letter that the user typed on the hidden word lines
+image 3
+
+* In here you see the message the user sees when a character that's not a letter is been typed
+image 4
+
+* In here the game shows this message when notthing has been typed
+image 5
+
+* In here you see this message when the user runs out of options
+image 6
+
+
+
 ## VALIDATORS
 
 The game has been validated in the CI Python Linter.
@@ -73,16 +95,15 @@ The game has been validated in the CI Python Linter.
 
 ## SOLVED BUGS AND ERRORS
 
-Corrected variables from camelCase to lowerCase with low_dash
-Mainly space and indentation errors
+* Corrected variables from camelCase to lowerCase with low_dash
+* Mainly space and indentation errors
 
 
 
 ## UNSOLVED BUGS AND ERRORS
 
-* I encounter 3 warning errors in gitpod.yml
-* I encounter 2 warning errors in run.py
-* I encounter 13 blue (i) in run.py
+* I encounter 3 warning errors in run.py
+* I encounter 6 blue (i) in run.py
 
 
 
