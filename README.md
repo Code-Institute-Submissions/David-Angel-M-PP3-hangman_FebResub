@@ -100,12 +100,13 @@ The game has been validated in the CI Python Linter. [CI Python Linter](https://
 
 * Corrected variables from camelCase to lowerCase with low_dash
 * Mainly space and indentation errors
+* Fixed parenthesis errors in run.py for elif statement
 
 
 
 ## UNSOLVED BUGS AND ERRORS
 
-* I encounter 8 blue (i) in run.py
+* Four blue (i) errors remain in run.py, these are for name styling and to correct this now would cause the application to fail. (The application runs as it should with these 4 errors remaining)
 
 
 
