@@ -32,9 +32,9 @@ class GameVisuals:
         Method shows dashes in the place where letter should be,
         if user gets a letter the letter shows
         """
-        for x in range(len(self.word)):
-            if self.word[x] == self.guessed_letters[x]:
-                print(self.word[x], end=" ")
+        for x_value in range(len(self.word)):
+            if self.word[x_value] == self.guessed_letters[x_value]:
+                print(self.word[x_value], end=" ")
             else:
                 print("_", end=" ")
         print("")
@@ -123,6 +123,9 @@ class Words:
             self.words.append(word.decode("utf-8"))
 
     def filter_word_list(self):
+        """
+        Filter the list of words by removing all words with length less than 4
+        """
         for word in self.words:
             if len(word) < 4:
                 self.words.remove(word)
@@ -137,8 +140,8 @@ class Words:
 
 if __name__ == "__main__":
     w1 = Words()
-    fails = 0
-    hits = 0
+    FAILS = 0
+    HITS = 0
 
     w1.get_word_list()
     game_word = w1.get_random_word()
@@ -149,22 +152,22 @@ if __name__ == "__main__":
     visuals.get_game_title()
     visuals.get_game_hidden_word()
 
-    while fails < 7 and hits < word_length:
+    while FAILS < 7 and HITS < word_length:
         user_input = visuals.user_input_validator()
         visuals.clear_console()
         letter_found_count = visuals.compare_word_letter(user_input)
         if letter_found_count == 0:
-            fails = fails + 1
+            FAILS = FAILS + 1
         elif letter_found_count > 0:
-            hits = hits + letter_found_count
+            HITS = HITS + letter_found_count
         visuals.get_game_title()
         visuals.get_game_hidden_word()
         print("Letters played...")
         visuals.get_played_letters()
         print("")
-        print(f"Fails: {fails}")
+        print(f"FAILS: {FAILS}")
 
-    if hits == word_length:
+    if HITS == word_length:
         print("!!!!!CONGRATULATIONS YOU WON!!!!!!")
     else:
         print("SORRY YOU LOSE")
